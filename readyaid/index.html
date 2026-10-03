@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ReadyAidRQ — Be Ready. Stay Safe.</title>
+
+    <meta
+        name="description"
+        content="ReadyAidRQ is an emergency preparedness and first-aid learning platform."
+    >
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- ACCESSIBILITY -->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- TOAST -->
+<div id="toast" class="toast"></div>
+
+<!-- TOP ALERT -->
+<div class="top-alert">
+    <div>
+        <span class="pulse-dot"></span>
+        <strong>ReadyAidRQ Emergency Network</strong>
+        <span>Learn. Prepare. Respond.</span>
+    </div>
+
+    <button onclick="openEmergency()">
+        🚨 Emergency Mode
+    </button>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+
+    <div class="container nav">
+
+        <a href="#home" class="logo">
+            <span class="logo-icon">✚</span>
+
+            <span>
+                <strong>ReadyAid</strong><b>RQ</b>
+                <small>BE READY. STAY SAFE.</small>
+            </span>
+        </a>
+
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open navigation"
+        >
+            ☰
+        </button>
+
+        <nav id="mainNav">
+
+            <a href="#home">Home</a>
+            <a href="#firstaid">First Aid</a>
+            <a href="#disasters">Disasters</a>
+            <a href="#quiz">Learn</a>
+            <a href="#checklist">Checklist</a>
+            <a href="#about">About</a>
+
+            <button
+                class="theme-button"
+                id="themeToggle"
+                aria-label="Toggle dark mode"
+            >
+                🌙
+            </button>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                <span>●</span>
+                EMERGENCY PREPAREDNESS PLATFORM
+            </div>
+
+            <h1>
+                Know what to do
+                <span>when it matters most.</span>
+            </h1>
+
+            <p class="hero-text">
+                ReadyAidRQ helps you learn first aid, prepare emergency
+                supplies, understand disasters, and create a personal
+                emergency plan — all in one place.
+            </p>
+
+            <div class="hero-actions">
+
+                <button
+                    class="btn btn-primary"
+                    onclick="openEmergency()"
+                >
+                    🚨 Emergency Mode
+                </button>
+
+                <a
+                    href="#firstaid"
+                    class="btn btn-secondary"
+                >
+                    Explore First Aid →
+                </a>
+
+            </div>
+
+            <div class="hero-trust">
+
+                <div>
+                    <strong>20+</strong>
+                    <span>Guides</span>
+                </div>
+
+                <div>
+                    <strong>4</strong>
+                    <span>Disaster Types</span>
+                </div>
+
+                <div>
+                    <strong>24/7</strong>
+                    <span>Ready to Learn</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- HERO APP MOCKUP -->
+        <div class="hero-visual">
+
+            <div class="phone">
+
+                <div class="phone-camera"></div>
+
+                <div class="phone-screen">
+
+                    <div class="app-top">
+
+                        <div>
+                            <small>READYAIDRQ</small>
+                            <h3>Hello, Responder 👋</h3>
+                        </div>
+
+                        <span class="avatar">R</span>
+
+                    </div>
+
+                    <div class="readiness-card">
+
+                        <div>
+                            <span>Readiness Score</span>
+                            <strong id="heroScore">68%</strong>
+                        </div>
+
+                        <div class="progress-ring">
+                            <span>68</span>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="phone-emergency"
+                        onclick="openEmergency()"
+                    >
+                        <span>🚨</span>
+                        <div>
+                            <strong>Emergency Mode</strong>
+                            <small>Get help quickly</small>
+                        </div>
+                        →
+                    </button>
+
+                    <div class="phone-title">
+                        Quick Actions
+                    </div>
+
+                    <div class="phone-grid">
+
+                        <button onclick="openGuide('bleeding')">
+                            🩸
+                            <span>Bleeding</span>
+                        </button>
+
+                        <button onclick="openGuide('burns')">
+                            🔥
+                            <span>Burns</span>
+                        </button>
+
+                        <button onclick="openGuide('choking')">
+                            🫁
+                            <span>Choking</span>
+                        </button>
+
+                        <button onclick="openGuide('cpr')">
+                            ❤️
+                            <span>CPR</span>
+                        </button>
+
+                    </div>
+
+                    <div class="phone-tip">
+                        <span>💡</span>
+                        <div>
+                            <strong>Today's Tip</strong>
+                            <p>Check your emergency kit every month.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EMERGENCY STRIP -->
+<section class="emergency-strip">
+
+    <div class="container emergency-strip-inner">
+
+        <div>
+            <span class="emergency-icon">🚨</span>
+
+            <div>
+                <strong>Someone needs help?</strong>
+                <p>
+                    Use Emergency Mode for immediate guidance.
+                </p>
+            </div>
+        </div>
+
+        <button
+            class="btn emergency-button"
+            onclick="openEmergency()"
+        >
+            OPEN EMERGENCY MODE
+        </button>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="about">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <div class="eyebrow">
+                WHY READYAIDRQ
+            </div>
+
+            <h2>
+                Everything you need to
+                <span>be prepared.</span>
+            </h2>
+
+            <p>
+                ReadyAidRQ combines first-aid education,
+                emergency planning, disaster preparation,
+                and practical tools.
+            </p>
+
+        </div>
+
+        <div class="feature-grid">
+
+            <article class="feature-card">
+                <div class="feature-icon red">🩹</div>
+                <h3>First Aid Guides</h3>
+                <p>
+                    Step-by-step educational guides for
+                    common emergencies and injuries.
+                </p>
+                <a href="#firstaid">Explore guides →</a>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon blue">🌪️</div>
+                <h3>Disaster Ready</h3>
+                <p>
+                    Learn what to do before, during, and
+                    after common disasters.
+                </p>
+                <a href="#disasters">Prepare for disasters →</a>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon green">🎒</div>
+                <h3>Emergency Kit</h3>
+                <p>
+                    Build a personalized emergency supply
+                    checklist.
+                </p>
+                <a href="#checklist">Build your kit →</a>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon purple">🧠</div>
+                <h3>Learn & Test</h3>
+                <p>
+                    Practice what you learn using interactive
+                    first-aid questions.
+                </p>
+                <a href="#quiz">Take the quiz →</a>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FIRST AID -->
+<section class="section section-alt" id="firstaid">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <div class="eyebrow">
+                    FIRST AID LIBRARY
+                </div>
+
+                <h2>
+                    Find the right guide
+                    <span>quickly.</span>
+                </h2>
+
+                <p>
+                    Search the library or select a category.
+                </p>
+            </div>
+
+            <div class="library-count">
+                <strong id="guideCount">12</strong>
+                <span>guides available</span>
+            </div>
+
+        </div>
+
+        <div class="search-box">
+
+            <span>🔎</span>
+
+            <input
+                id="guideSearch"
+                type="search"
+                placeholder="Search bleeding, burns, CPR, choking..."
+            >
+
+        </div>
+
+        <div class="filter-buttons" id="filters">
+
+            <button class="active" data-filter="all">
+                All
+            </button>
+
+            <button data-filter="injury">
+                🩹 Injuries
+            </button>
+
+            <button data-filter="breathing">
+                🫁 Breathing
+            </button>
+
+            <button data-filter="medical">
+                ❤️ Medical
+            </button>
+
+            <button data-filter="environment">
+                🌡️ Environment
+            </button>
+
+        </div>
+
+        <div class="guide-grid" id="guideGrid">
+
+            <article
+                class="guide"
+                data-category="injury"
+                data-search="bleeding cuts wound blood"
+            >
+
+                <div class="guide-top red-bg">
+                    🩸
+                </div>
+
+                <div class="guide-body">
+
+                    <span class="guide-tag">INJURY</span>
+
+                    <h3>Severe Bleeding</h3>
+
+                    <p>
+                        Learn basic steps for responding
+                        to serious bleeding.
+                    </p>
+
+                    <button onclick="openGuide('bleeding')">
+                        View guide →
+                    </button>
+
+                </div>
+
+            </article>
+
+            <article
+                class="guide"
+                data-category="injury"
+                data-search="burn burns heat fire scald"
+            >
+
+                <div class="guide-top orange-bg">
+                    🔥
+                </div>
+
+                <div class="guide-body">
+
+                    <span class="guide-tag">INJURY</span>
+
+                    <h3>Burns</h3>
+
+                    <p>
+                        Understand immediate first-aid
+                        considerations for burns.
+                    </p>
+
+                    <button onclick="openGuide('burns')">
+                        View guide →
+                    </button>
+
+                </div>
+
+            </article>
+
+            <article
+                class="guide"
+                data-category="breathing"
+                data-search="choking airway food breathing"
+            >
+
+                <div class="guide-top blue-bg">
+                    🫁
+                </div>
+
+                <div class="guide-body">
+
+                    <span class="guide-tag">BREATHING</span>
+
+                    <h3>Choking</h3>
+
+                    <p>
+                        Learn what to do when someone
+                        may have an obstructed airway.
+                    </p>
+
+                    <button onclick="openGuide('choking')">
+                        View guide →
+                    </button>
+
+                </div>
+
+            </article>
+
+            <article
+                class="guide"
+                data-category="medical"
+                data-search="CPR cardiac arrest heart resuscitation"
+            >
+
+                <div class="guide-top red-bg">
+                    ❤️
+                </div>
+
+                <div class="guide-body">
+
+                    <span class="guide-tag">MEDICAL</span>
+
+                    <h3>CPR Basics</h3>
+
+                    <p>
+                        Learn the basic response to a
+                        suspected cardiac arrest.
+                    </p>
+
+                    <button onclick="openGuide('cpr')">
+                        View guide →
+                    </button>
+
+                </div>
+
+            </article>
+
+            <article
+                class="guide"
+                data-category="injury"
+                data-search="fracture broken bone injury"
+            >
+
+                <div class="guide-top purple-bg">
+                    🦴
+                </div>
+
+                <div class="guide-body">
+
+                    <span class="guide-tag">INJURY</span>
+
+                    <h3>Fractures</h3>
+
+                    <p>
+                        Basic guidance for suspected
+                        broken bones.
+                    </p>
+
+                    <button onclick="openGuide('fracture')">
+                        View guide →
+                    </button>
+
+                </div>
+
+            </article>
+
+            <article
+                class="guide"
+                data-category="environment"
+                data-search="bite sting insect snake animal"
+            >
+
+                <div class="guide-top yellow-bg">
+                    🐝
+                </div>
+
+                <div class="guide-body">
+
+                    <span class="guide-tag">ENVIRONMENT</span>
+
+                    <h3>Bites & Stings</h3>
+
+                    <p>
+                        Learn general precautions for
+                        bites and stings.
+                    </p>
+
+                    <button onclick="openGuide('bites')">
+                        View guide →
+                    </button>
+
+                </div>
+
+            </article>
+
+            <article
+                class="guide"
+                data-category="medical"
+                data-search="fainting unconscious dizziness collapse"
+            >
+
+                <div class="guide-top blue-bg">
+                    😵
+                </div>
+
+                <div class="guide-body">
+
+                    <span class="guide-tag">MEDICAL</span>
+
+                    <h3>Fainting</h3>
+
+                    <p>
+                        Learn how to respond when someone
+                        loses consciousness briefly.
+                    </p>
+
+                    <button onclick="openGuide('fainting')">
+                        View guide →
+                    </button>
+
+                </div>
+
+            </article>
+
+            <article
+                class="guide"
+                data-category="injury"
+                data-search="sprain ankle twisted ligament"
+            >
+
+                <div class="guide-top green-bg">
+                    🦶
+                </div>
+
+                <div class="guide-body">
+
+                    <span class="guide-tag">INJURY</span>
+
+                    <h3>Sprains</h3>
+
+                    <p>
+                        Basic considerations for common
+                        sprains and strains.
+                    </p>
+
+                    <button onclick="openGuide('sprain')">
+                        View guide →
+                    </button>
+
+                </div>
+
+            </article>
+
+            <article
+                class="guide"
+                data-category="environment"
+                data-search="heat heatstroke dehydration hot"
+            >
+
+                <div class="guide-top orange-bg">
+                    ☀️
+                </div>
+
+                <div class="guide-body">
+
+                    <span class="guide-tag">ENVIRONMENT</span>
+
+                    <h3>Heat Illness</h3>
+
+                    <p>
+                        Recognize warning signs related
+                        to excessive heat.
+                    </p>
+
+                    <button onclick="openGuide('heat')">
+                        View guide →
+                    </button>
+
+                </div>
+
+            </article>
+
+            <article
+                class="guide"
+                data-category="environment"
+                data-search="hypothermia cold freezing"
+            >
+
+                <div class="guide-top blue-bg">
+                    ❄️
+                </div>
+
+                <div class="guide-body">
+
+                    <span class="guide-tag">ENVIRONMENT</span>
+
+                    <h3>Cold Exposure</h3>
+
+                    <p>
+                        General guidance for someone
+                        exposed to extreme cold.
+                    </p>
+
+                    <button onclick="openGuide('cold')">
+                        View guide →
+                    </button>
+
+                </div>
+
+            </article>
+
+            <article
+                class="guide"
+                data-category="medical"
+                data-search="allergy allergic reaction anaphylaxis"
+            >
+
+                <div class="guide-top purple-bg">
+                    ⚠️
+                </div>
+
+                <div class="guide-body">
+
+                    <span class="guide-tag">MEDICAL</span>
+
+                    <h3>Allergic Reaction</h3>
+
+                    <p>
+                        Learn how to recognize potentially
+                        serious allergic reactions.
+                    </p>
+
+                    <button onclick="openGuide('allergy')">
+                        View guide →
+                    </button>
+
+                </div>
+
+            </article>
+
+            <article
+                class="guide"
+                data-category="injury"
+                data-search="head injury concussion hit"
+            >
+
+                <div class="guide-top yellow-bg">
+                    🧠
+                </div>
+
+                <div class="guide-body">
+
+                    <span class="guide-tag">INJURY</span>
+
+                    <h3>Head Injury</h3>
+
+                    <p>
+                        Important precautions following
+                        a significant head impact.
+                    </p>
+
+                    <button onclick="openGuide('head')">
+                        View guide →
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+        <div
+            class="no-results"
+            id="noResults"
+        >
+            <div>🔎</div>
+            <h3>No guides found</h3>
+            <p>Try another search term or category.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- READINESS DASHBOARD -->
+<section class="section">
+
+    <div class="container">
+
+        <div class="dashboard">
+
+            <div class="dashboard-info">
+
+                <div class="eyebrow">
+                    YOUR READINESS
+                </div>
+
+                <h2>
+                    How prepared
+                    <span>are you?</span>
+                </h2>
+
+                <p>
+                    Complete your emergency checklist and
+                    learning activities to increase your
+                    readiness score.
+                </p>
+
+                <a
+                    href="#checklist"
+                    class="btn btn-primary"
+                >
+                    Improve my readiness →
+                </a>
+
+            </div>
+
+            <div class="score-panel">
+
+                <div class="big-score">
+                    <span id="dashboardScore">68</span>
+                    <small>%</small>
+                </div>
+
+                <div class="score-label">
+                    READINESS SCORE
+                </div>
+
+                <div class="score-progress">
+                    <span id="scoreBar"></span>
+                </div>
+
+                <div class="score-items">
+
+                    <div>
+                        <span>✓</span>
+                        Emergency kit
+                        <b id="kitScore">0%</b>
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        Learning
+                        <b id="learningScore">0%</b>
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        Emergency plan
+                        <b id="planScore">0%</b>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DISASTERS -->
+<section class="section section-alt" id="disasters">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <div class="eyebrow">
+                DISASTER PREPAREDNESS
+            </div>
+
+            <h2>
+                Prepare before
+                <span>disaster strikes.</span>
+            </h2>
+
+            <p>
+                Understand what to do before, during,
+                and after major emergencies.
+            </p>
+
+        </div>
+
+        <div class="disaster-grid">
+
+            <article
+                class="disaster-card"
+                onclick="openDisaster('earthquake')"
+            >
+                <div class="disaster-image earthquake">
+                    🌎
+                </div>
+
+                <div>
+                    <span>DISASTER</span>
+                    <h3>Earthquake</h3>
+                    <p>
+                        Drop, Cover, and Hold On.
+                    </p>
+                    <button>
+                        Learn more →
+                    </button>
+                </div>
+            </article>
+
+            <article
+                class="disaster-card"
+                onclick="openDisaster('flood')"
+            >
+                <div class="disaster-image flood">
+                    🌊
+                </div>
+
+                <div>
+                    <span>DISASTER</span>
+                    <h3>Flood</h3>
+                    <p>
+                        Stay away from dangerous floodwater.
+                    </p>
+                    <button>
+                        Learn more →
+                    </button>
+                </div>
+            </article>
+
+            <article
+                class="disaster-card"
+                onclick="openDisaster('typhoon')"
+            >
+                <div class="disaster-image typhoon">
+                    🌀
+                </div>
+
+                <div>
+                    <span>DISASTER</span>
+                    <h3>Typhoon</h3>
+                    <p>
+                        Prepare supplies and follow warnings.
+                    </p>
+                    <button>
+                        Learn more →
+                    </button>
+                </div>
+            </article>
+
+            <article
+                class="disaster-card"
+                onclick="openDisaster('fire')"
+            >
+                <div class="disaster-image fire">
+                    🔥
+                </div>
+
+                <div>
+                    <span>DISASTER</span>
+                    <h3>Fire</h3>
+                    <p>
+                        Get out safely and stay out.
+                    </p>
+                    <button>
+                        Learn more →
+                    </button>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CHECKLIST -->
+<section class="section" id="checklist">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <div class="eyebrow">
+                    EMERGENCY KIT
+                </div>
+
+                <h2>
+                    Build your
+                    <span>go-bag.</span>
+                </h2>
+
+                <p>
+                    Check the items you already have.
+                    Your progress is saved automatically.
+                </p>
+            </div>
+
+            <div class="kit-progress">
+
+                <strong id="kitPercent">
+                    0%
+                </strong>
+
+                <span>complete</span>
+
+            </div>
+
+        </div>
+
+        <div class="checklist-layout">
+
+            <div class="checklist-card">
+
+                <div class="checklist-category">
+                    <h3>💧 Water & Food</h3>
+
+                    <label>
+                        <input type="checkbox" data-kit>
+                        Drinking water
+                    </label>
+
+                    <label>
+                        <input type="checkbox" data-kit>
+                        Ready-to-eat food
+                    </label>
+
+                    <label>
+                        <input type="checkbox" data-kit>
+                        Can opener
+                    </label>
+                </div>
+
+                <div class="checklist-category">
+                    <h3>🔦 Light & Communication</h3>
+
+                    <label>
+                        <input type="checkbox" data-kit>
+                        Flashlight
+                    </label>
+
+                    <label>
+                        <input type="checkbox" data-kit>
+                        Extra batteries
+                    </label>
+
+                    <label>
+                        <input type="checkbox" data-kit>
+                        Power bank
+                    </label>
+
+                    <label>
+                        <input type="checkbox" data-kit>
+                        Battery-powered radio
+                    </label>
+                </div>
+
+                <div class="checklist-category">
+                    <h3>🩹 First Aid</h3>
+
+                    <label>
+                        <input type="checkbox" data-kit>
+                        First-aid kit
+                    </label>
+
+                    <label>
+                        <input type="checkbox" data-kit>
+                        Bandages
+                    </label>
+
+                    <label>
+                        <input type="checkbox" data-kit>
+                        Antiseptic supplies
+                    </label>
+                </div>
+
+                <div class="checklist-category">
+                    <h3>📄 Important Items</h3>
+
+                    <label>
+                        <input type="checkbox" data-kit>
+                        Copies of important documents
+                    </label>
+
+                    <label>
+                        <input type="checkbox" data-kit>
+                        Emergency contacts
+                    </label>
+
+                    <label>
+                        <input type="checkbox" data-kit>
+                        Cash
+                    </label>
+                </div>
+
+            </div>
+
+            <aside class="kit-side">
+
+                <div class="kit-visual">
+                    <div class="bag">🎒</div>
+
+                    <h3>Emergency Go-Bag</h3>
+
+                    <p>
+                        Keep your essential supplies together
+                        where they can be grabbed quickly.
+                    </p>
+
+                    <div class="large-progress">
+                        <span id="kitProgressBar"></span>
+                    </div>
+
+                    <strong id="kitProgressText">
+                        0 of 13 items
+                    </strong>
+
+                </div>
+
+                <button
+                    class="btn btn-secondary full"
+                    onclick="resetChecklist()"
+                >
+                    Reset checklist
+                </button>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EMERGENCY PLAN -->
+<section class="section section-alt">
+
+    <div class="container">
+
+        <div class="plan-card">
+
+            <div class="plan-intro">
+
+                <div class="eyebrow">
+                    PERSONAL EMERGENCY PLAN
+                </div>
+
+                <h2>
+                    Make a plan before
+                    <span>you need one.</span>
+                </h2>
+
+                <p>
+                    Save important information in your browser
+                    so you can access your plan quickly.
+                </p>
+
+            </div>
+
+            <form id="planForm" class="plan-form">
+
+                <label>
+                    Your name
+                    <input
+                        id="planName"
+                        type="text"
+                        placeholder="Your name"
+                    >
+                </label>
+
+                <label>
+                    Emergency contact
+                    <input
+                        id="planContact"
+                        type="text"
+                        placeholder="Name + phone number"
+                    >
+                </label>
+
+                <label>
+                    Meeting location
+                    <input
+                        id="planMeeting"
+                        type="text"
+                        placeholder="Family meeting location"
+                    >
+                </label>
+
+                <label>
+                    Important information
+                    <textarea
+                        id="planNotes"
+                        rows="4"
+                        placeholder="Allergies, important instructions, etc."
+                    ></textarea>
+                </label>
+
+                <button
+                    class="btn btn-primary"
+                    type="submit"
+                >
+                    Save Emergency Plan
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- QUIZ -->
+<section class="section" id="quiz">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <div class="eyebrow">
+                READY CHECK
+            </div>
+
+            <h2>
+                Test your
+                <span>emergency knowledge.</span>
+            </h2>
+
+            <p>
+                Answer a few questions and see what you know.
+            </p>
+
+        </div>
+
+        <div class="quiz-container" id="quizContainer">
+
+            <div class="quiz-progress">
+
+                <div>
+                    Question
+                    <strong id="questionNumber">1</strong>
+                    of
+                    <strong id="questionTotal">5</strong>
+                </div>
+
+                <div class="quiz-bar">
+                    <span id="quizBar"></span>
+                </div>
+
+            </div>
+
+            <div class="quiz-question">
+
+                <span class="question-icon">🧠</span>
+
+                <h3 id="questionText">
+                    Loading question...
+                </h3>
+
+                <div
+                    class="answers"
+                    id="answers"
+                ></div>
+
+                <div class="quiz-feedback" id="quizFeedback"></div>
+
+                <button
+                    class="btn btn-primary quiz-next"
+                    id="quizNext"
+                    onclick="nextQuestion()"
+                    disabled
+                >
+                    Next question →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CPR TOOL -->
+<section class="section section-dark">
+
+    <div class="container cpr-tool">
+
+        <div>
+
+            <div class="eyebrow">
+                PRACTICE TOOL
+            </div>
+
+            <h2>
+                CPR compression
+                <span>rhythm helper.</span>
+            </h2>
+
+            <p>
+                Use the metronome to practice maintaining
+                a consistent rhythm. This is an educational
+                practice tool and is not a substitute for
+                professional CPR training.
+            </p>
+
+            <button
+                class="btn btn-white"
+                onclick="toggleCPR()"
+                id="cprButton"
+            >
+                ▶ Start Metronome
+            </button>
+
+        </div>
+
+        <div class="cpr-meter">
+
+            <div
+                class="cpr-circle"
+                id="cprCircle"
+            >
+                <span id="cprBpm">100</span>
+                <small>BPM</small>
+            </div>
+
+            <input
+                id="bpmRange"
+                type="range"
+                min="80"
+                max="120"
+                value="100"
+            >
+
+            <span>
+                Practice rhythm
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+
+    <div class="container faq-layout">
+
+        <div>
+
+            <div class="eyebrow">
+                FAQ
+            </div>
+
+            <h2>
+                Questions?
+                <span>We've got answers.</span>
+            </h2>
+
+            <p>
+                A few common questions about ReadyAidRQ.
+            </p>
+
+        </div>
+
+        <div class="faq-list">
+
+            <article class="faq-item">
+
+                <button>
+                    What is ReadyAidRQ?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    ReadyAidRQ is an educational emergency
+                    preparedness platform designed to help
+                    people learn basic first-aid concepts,
+                    prepare supplies, and create emergency plans.
+                </div>
+
+            </article>
+
+            <article class="faq-item">
+
+                <button>
+                    Does ReadyAidRQ replace emergency services?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    No. ReadyAidRQ is an educational resource.
+                    In a real emergency, contact your local
+                    emergency services and follow instructions
+                    from qualified professionals.
+                </div>
+
+            </article>
+
+            <article class="faq-item">
+
+                <button>
+                    Does my checklist save?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Yes. Your checklist and emergency plan
+                    are stored locally in your browser using
+                    localStorage.
+                </div>
+
+            </article>
+
+            <article class="faq-item">
+
+                <button>
+                    Can I use this on my phone?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Yes. The website is responsive and designed
+                    to work on phones, tablets, and desktop
+                    screens.
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+
+    <div class="container cta">
+
+        <div class="cta-icon">
+            ✚
+        </div>
+
+        <h2>
+            Don't wait for an emergency
+            to start preparing.
+        </h2>
+
+        <p>
+            Learn one skill today. Build one habit tomorrow.
+            Be more prepared when it matters.
+        </p>
+
+        <div class="cta-buttons">
+
+            <button
+                class="btn btn-white"
+                onclick="openEmergency()"
+            >
+                🚨 Emergency Mode
+            </button>
+
+            <a
+                href="#checklist"
+                class="btn btn-outline-white"
+            >
+                Build my kit
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <a href="#home" class="logo footer-logo">
+                <span class="logo-icon">✚</span>
+
+                <span>
+                    <strong>ReadyAid</strong><b>RQ</b>
+                    <small>BE READY. STAY SAFE.</small>
+                </span>
+            </a>
+
+            <p>
+                Educational tools for first aid,
+                preparedness, and emergency planning.
+            </p>
+
+        </div>
+
+        <div>
+            <h4>Explore</h4>
+            <a href="#firstaid">First Aid</a>
+            <a href="#disasters">Disasters</a>
+            <a href="#quiz">Quiz</a>
+            <a href="#checklist">Emergency Kit</a>
+        </div>
+
+        <div>
+            <h4>Tools</h4>
+            <a href="#checklist">Readiness Score</a>
+            <a href="#quiz">Ready Check</a>
+            <a href="#faq">FAQ</a>
+            <button onclick="shareSite()">Share ReadyAidRQ</button>
+        </div>
+
+        <div>
+            <h4>Important</h4>
+            <p class="footer-small">
+                ReadyAidRQ provides educational information.
+                It does not replace professional medical
+                advice, diagnosis, treatment, or emergency
+                services.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom container">
+
+        <span>
+            © 2026 ReadyAidRQ
+        </span>
+
+        <span>
+            Built for preparedness.
+        </span>
+
+    </div>
+
+</footer>
+
+<!-- GUIDE MODAL -->
+<div
+    class="modal"
+    id="guideModal"
+    aria-hidden="true"
+>
+
+    <div class="modal-overlay" onclick="closeGuide()"></div>
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            onclick="closeGuide()"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+        <div id="guideContent"></div>
+
+    </div>
+
+</div>
+
+<!-- DISASTER MODAL -->
+<div
+    class="modal"
+    id="disasterModal"
+>
+
+    <div
+        class="modal-overlay"
+        onclick="closeDisaster()"
+    ></div>
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            onclick="closeDisaster()"
+        >
+            ×
+        </button>
+
+        <div id="disasterContent"></div>
+
+    </div>
+
+</div>
+
+<!-- EMERGENCY MODAL -->
+<div
+    class="modal emergency-modal"
+    id="emergencyModal"
+>
+
+    <div
+        class="modal-overlay"
+        onclick="closeEmergency()"
+    ></div>
+
+    <div class="emergency-box">
+
+        <button
+            class="modal-close"
+            onclick="closeEmergency()"
+        >
+            ×
+        </button>
+
+        <div class="emergency-header">
+            <span>🚨</span>
+            <div>
+                <small>READYAIDRQ</small>
+                <h2>Emergency Mode</h2>
+            </div>
+        </div>
+
+        <div class="emergency-warning">
+            <strong>Is this a life-threatening emergency?</strong>
+            <p>
+                Contact your local emergency services immediately.
+                Do not rely on this website for emergency dispatch.
+            </p>
+        </div>
+
+        <div class="emergency-actions">
+
+            <button onclick="openGuide('cpr')">
+                ❤️
+                <strong>CPR</strong>
+                <small>Person not breathing normally</small>
+            </button>
+
+            <button onclick="openGuide('choking')">
+                🫁
+                <strong>Choking</strong>
+                <small>Airway may be blocked</small>
+            </button>
+
+            <button onclick="openGuide('bleeding')">
+                🩸
+                <strong>Severe Bleeding</strong>
+                <small>Heavy bleeding</small>
+            </button>
+
+            <button onclick="openGuide('burns')">
+                🔥
+                <strong>Burn</strong>
+                <small>Thermal injury</small>
+            </button>
+
+        </div>
+
+        <div class="emergency-footer">
+            If you are unsure what to do, seek help from
+            qualified emergency professionals.
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
